@@ -3,13 +3,19 @@ import Hero from "./components/Hero";
 
 export default function Home() {
   return (
-    <main className="bg-custom-radial text-white min-h-screen flex flex-col items-center font-geist opacity-0 scale-95 animate-scale-in">
+    <div>
       <Navbar />
 
-      <section>
-        {/* Hero */}
-        <Hero />
-      </section>
-    </main>
+      <main className="relative bg-custom-radial text-white min-h-screen flex flex-col items-center font-geist">
+        <div className="opacity-0 scale-95 animate-scale-in w-full">
+          <section>
+            <Hero />
+          </section>
+          <section>
+            
+          </section>
+        </div>
+      </main>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   const phrases = [
-    "Je suis Mathieu, un développeur web full-stack !",
+    "Je suis Mathieu, un développeur web full-stack en bac+3 !",
     "Je recherche une alternance en développement web",
     "à partir de septembre 2025 !"
   ];
@@ -40,7 +40,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mt-6 md:mt-0 md:ml-12 text-center md:text-left max-w-lg">
+      <div className="mt-6 md:mt-0 md:ml-12 text-center md:text-left max-w-xl">
         <h1 className="text-4xl md:text-5xl font-bold font-geist">
           Bonjour, bienvenue sur mon <span className="text-purple-400">Portfolio</span>
         </h1>

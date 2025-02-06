@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-10 backdrop-blur-md shadow-lg z-50">
+    <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-10 backdrop-blur-md shadow-lg z-[100]">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <a
           href="#home"
@@ -26,7 +26,6 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-
 
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">
