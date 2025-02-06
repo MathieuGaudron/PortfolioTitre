@@ -6,8 +6,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-10 backdrop-blur-md shadow-lg z-[100]">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full bg-opacity-10 backdrop-blur-md z-[100]">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center font-geist">
         <a
           href="#home"
           className="text-4xl font-bold text-white tracking-wider transition-transform duration-500 hover:scale-110"

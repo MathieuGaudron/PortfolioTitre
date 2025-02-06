@@ -6,8 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function Hero() {
   const phrases = [
     "Je suis Mathieu, un développeur web full-stack en bac+3 !",
-    "Je recherche une alternance en développement web",
-    "à partir de septembre 2025 !"
+    "Je recherche une alternance en développement web à partir de septembre 2025 !",
   ];
 
   const [displayedTexts, setDisplayedTexts] = useState<string[]>([]);
@@ -53,7 +52,7 @@ export default function Hero() {
                 loop={1}
                 cursor={index === displayedTexts.length - 1}
                 cursorStyle="_"
-                typeSpeed={50}
+                typeSpeed={20}
               />
             </p>
           ))}
