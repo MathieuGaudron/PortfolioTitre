@@ -41,7 +41,7 @@ export default function Navbar() {
               key={index}
               href={`#${item.toLowerCase()}`}
               className="block text-gray-300 hover:text-purple-500 py-2 text-lg font-medium"
-              onClick={() => setIsOpen(false)} // Ferme le menu après clic
+              onClick={() => setIsOpen(false)} 
             >
               {item}
             </a>

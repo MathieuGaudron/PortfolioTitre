@@ -1,6 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stack from "./components/Stack";
+// import Card from "./components/Card";
+import Cards from "./components/Cards";
+
 
 export default function Home() {
   return (
@@ -14,6 +17,10 @@ export default function Home() {
           </section>
           <section>
             <Stack />
+          </section>
+          <section>
+            <Cards />
+            {/* <Card /> */}
           </section>
         </div>
       </main>
