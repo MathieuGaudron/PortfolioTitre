@@ -25,7 +25,7 @@ const techs = [
   { name: "WordPress", icon: <SiWordpress />, color: "text-blue-600" },
 ];
 
-export default function Technologies() {
+export default function Stacks() {
   return (
     <section className="py-8 px-24 text-center">
       <h2 className="text-3xl font-bold mb-16 text-purple-400">Les stacks sur lesquelles j&apos;ai pu travailler :</h2>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export default function Hero() {
   const phrases = [
@@ -41,9 +42,9 @@ export default function Hero() {
 
       <div className="mt-6 md:mt-0 md:ml-12 text-center md:text-left max-w-xl">
         <h1 className="text-4xl md:text-5xl font-bold font-geist">
-          Bonjour, bienvenue sur mon <span className="text-purple-400">Portfolio</span>
+          Bonjour, bienvenue sur mon{" "}
+          <span className="text-purple-400">Portfolio</span>
         </h1>
-
         <div className="mt-4 text-lg text-gray-300">
           {displayedTexts.map((text, index) => (
             <p key={index}>
@@ -57,13 +58,28 @@ export default function Hero() {
             </p>
           ))}
         </div>
-
-        <a
-          href="#projets"
-          className="mt-6 inline-block px-6 py-3 text-lg font-semibold text-white bg-purple-600 rounded-xl shadow-lg hover:bg-purple-700 transition-transform duration-200 hover:scale-105"
-        >
-          Voir mes projets
-        </a>
+        <div className="flex mt-6 justify-center md:justify-start space-x-16">
+          <a
+            href="#projets"
+            className="inline-block px-6 py-4 text-lg font-semibold text-white bg-purple-600 rounded-xl shadow-lg hover:bg-purple-700 transition-transform duration-200 hover:scale-105"
+          >
+            Voir mes projets
+          </a>
+          <div className="flex space-x-8">
+            <a
+              href="https://github.com/MathieuGaudron"
+              className=" my-3 text-4xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110"
+            >
+              <SiGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mathieu-gaudron-ponch/"
+              className="my-3 text-4xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110"
+            >
+              <SiLinkedin />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
