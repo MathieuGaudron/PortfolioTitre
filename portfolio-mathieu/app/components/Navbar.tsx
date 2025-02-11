@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center font-geist">
         <button
           onClick={() => scrollToSection("accueil")}
-          className="text-4xl font-bold text-white tracking-wider transition-transform duration-500 hover:scale-110"
+          className="md:text-4xl text-2xl font-bold text-white tracking-wider transition-transform duration-500 hover:scale-110"
         >
           Mathieu<span className="text-purple-500">&apos;Dev</span>
         </button>
