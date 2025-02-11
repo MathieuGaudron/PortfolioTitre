@@ -29,9 +29,17 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-white px-6 md:px-12">
-      <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-purple-900 shadow-lg shadow-violet-700/50 transition-transform duration-300 hover:scale-110">
+    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-white px-6 md:px-12 font-geist mt-24 md:mt-0">
+      <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-purple-900 shadow-lg shadow-violet-700/50 transition-transform duration-300 hover:scale-110">
+
         <Image
           src="/assets/photo_cv_epitech.jpg"
           alt="Mathieu Gaudron"
@@ -40,13 +48,15 @@ export default function Hero() {
           className="object-cover w-full h-full cursor-pointer"
         />
       </div>
-      <div className="mt-6 md:mt-0 md:ml-12 text-center md:text-left max-w-xl">
-        <h1 className="text-4xl md:text-5xl font-bold font-geist">
+
+      <div className="mt-6 md:mt-0 md:ml-12 text-center md:text-left max-w-lg md:max-w-xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-geist leading-tight">
           Bonjour, bienvenue sur mon{" "}
-          <span className="text-purple-400">Portfolio</span>
+          <span className="text-purple-400">Portfolio </span>
+          !
         </h1>
 
-        <div className="mt-4 text-lg text-gray-300">
+        <div className="mt-8 text-base sm:text-lg text-gray-300">
           {displayedTexts.map((text, index) => (
             <p key={index}>
               <Typewriter
@@ -59,20 +69,22 @@ export default function Hero() {
             </p>
           ))}
         </div>
-        <div className="flex mt-6 justify-center md:justify-start space-x-16">
-          <Link
-            href="./Cards.tsx"
-            className="inline-block px-6 py-4 text-lg font-semibold text-white bg-purple-600 rounded-xl shadow-lg hover:bg-purple-700 transition-transform duration-200 hover:scale-105"
+
+        <div className="flex flex-col sm:flex-row mt-8 justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-16">
+          <button
+            onClick={() => scrollToSection("projets")}
+            className="px-4 py-3 sm:px-6 sm:py-4 text-base sm:text-lg font-semibold text-white bg-purple-600 rounded-xl shadow-lg hover:bg-purple-700 transition-transform duration-200 hover:scale-105"
           >
             Voir mes projets
-          </Link>
+          </button>
 
-          <div className="flex space-x-8">
+          <div className="flex justify-center sm:justify-start space-x-6 ">
             <Link
               href="https://github.com/MathieuGaudron"
               target="_blank"
               rel="noopener noreferrer"
-              className="my-3 text-4xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110"
+              className="text-4xl sm:text-5xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
+
             >
               <SiGithub />
             </Link>
@@ -81,7 +93,8 @@ export default function Hero() {
               href="https://www.linkedin.com/in/mathieu-gaudron-ponch/"
               target="_blank"
               rel="noopener noreferrer"
-              className="my-3 text-4xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110"
+              className="text-4xl sm:text-5xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
+
             >
               <SiLinkedin />
             </Link>

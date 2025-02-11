@@ -11,14 +11,14 @@ export default function Home() {
       <Navbar />
 
       <main className="relative bg-custom-radial text-white min-h-screen flex flex-col items-center font-geist">
-        <div className="opacity-0 scale-95 animate-scale-in w-full">
+        <div className="opacity-0 scale-95 animate-scale-in w-full" id="accueil">
           <section>
             <Hero />
           </section>
           <section>
             <Stack />
           </section>
-          <section>
+          <section id="projets">
             <Cards />
             {/* <Card /> */}
           </section>

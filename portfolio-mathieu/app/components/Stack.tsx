@@ -27,16 +27,19 @@ const techs = [
 
 export default function Stacks() {
   return (
-    <section className="py-8 px-24 text-center">
-      <h2 className="text-3xl font-bold mb-16 text-purple-400">Les stacks sur lesquelles j&apos;ai pu travailler :</h2>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-6 justify-center">
+    <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-24 text-center mt-16 md:mt-0">
+      <h2 className="text-3xl font-bold mb-12 text-purple-400">
+        Les stacks sur lesquelles j&apos;ai pu travailler :
+      </h2>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
         {techs.map((tech, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-4 rounded-lg bg-black/30 shadow-lg transition-all duration-500 hover:scale-125 cursor-pointer"
+            className="flex flex-col items-center p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
-            <span className={`text-5xl ${tech.color}`}>{tech.icon}</span>
-            <p className="mt-2 text-gray-300">{tech.name}</p>
+            <span className={`text-4xl sm:text-5xl ${tech.color}`}>{tech.icon}</span>
+            <p className="mt-2 text-gray-300 text-base">{tech.name}</p>
           </div>
         ))}
       </div>
