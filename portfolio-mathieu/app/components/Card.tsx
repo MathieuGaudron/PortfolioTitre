@@ -74,15 +74,17 @@ export default function Card({
 
   return (
     <div className="rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 mb-8 hover:shadow-purple-600">
-      <div className="relative w-full h-64">
-        <Image
-          src={image}
-          alt={title}
-          width={600}
-          height={400}
-          className="rounded-t-lg w-full h-64 object-cover"
-        />
-      </div>
+      <Link href={demo || "#" } target="_blank" rel="noopener noreferrer">
+        <div className="relative w-full h-64 cursor-pointer">
+          <Image
+            src={image}
+            alt={title}
+            width={600}
+            height={400}
+            className="rounded-t-lg w-full h-64 object-contain"
+          />
+        </div>
+      </Link>
 
       <div className="p-6">
         <h3 className="text-2xl font-bold text-purple-400">{title}</h3>
