@@ -16,26 +16,29 @@ export default function Cards() {
           demo="https://movies-library-psi.vercel.app/"
           githubButton={true}
           reactButton={true}
+          projectId="movies-library"
         />
 
         <Card
           title="Auto-école HD Conduite"
-          description="Un site web vitrine pour l'auto école d'un client. Réalisé avec React et Tailwind CSS."
+          description="Un site web vitrine pour les auto-écoles d'un client. Réalisé avec React et Tailwind CSS."
           image="/assets/hd-conduite.png"
           link="https://github.com/MathieuGaudron/HD_CONDUITE"
           demo="https://hd-conduite.vercel.app/"
           githubButton={true}
           reactButton={true}
+          projectId="hd-conduite"
         />
 
         <Card
-          title="Bibliothèque de Films"
-          description="Une application React / Node / MongoDB qui permet de rechercher vos films et séries TV du moment. Inclus un système d'inscription / connexion."
-          image="/assets/MoviesLibrary.png"
-          link="https://github.com/MathieuGaudron/MoviesLibrary"
-          demo="https://movies-library-psi.vercel.app/"
+          title="Puissance 4"
+          description="Projet d'algorithmie en JavaScript. Le célèbre jeu puissance 4."
+          image="/assets/puissance4.png"
+          link="https://github.com/MathieuGaudron/Puissance_4"
+          demo="https://puissance-4-green.vercel.app/"
           githubButton={true}
           reactButton={true}
+          projectId="puissance-4" 
         />
       </div>
     </section>
