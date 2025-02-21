@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaReact } from "react-icons/fa";
-import { supabase } from "@/app/lib/supabaseClient";
+import { supabase } from "../lib/supabaseClient";
 
 interface CardProps {
   title: string;
