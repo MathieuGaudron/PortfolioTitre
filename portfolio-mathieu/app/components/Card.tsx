@@ -57,7 +57,7 @@ export default function Card({
       return;
     }
 
-    const { supabase } = await import("@/app/lib/supabaseClient");
+    const { supabase } = await import("./../lib/supabaseClient");
 
     const { data, error } = await supabase
       .from("commentaires")
