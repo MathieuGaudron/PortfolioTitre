@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaReact } from "react-icons/fa";
+import { supabase } from "@/app/lib/supabaseClient"; 
 
 interface CardProps {
   title: string;
@@ -33,18 +34,20 @@ export default function Card({
 
   useEffect(() => {
     const fetchCommentaires = async () => {
-      const { supabase } = await import("./../lib/supabaseClient");
+      try {
+        const { data, error } = await supabase
+          .from("commentaires")
+          .select("*")
+          .eq("project_id", projectId)
+          .order("created_at", { ascending: false });
 
-      const { data, error } = await supabase
-        .from("commentaires")
-        .select("*")
-        .eq("project_id", projectId)
-        .order("created_at", { ascending: false });
-
-      if (error) {
-        console.error("Erreur de chargement des commentaires:", error);
-      } else {
-        setCommentaires(data || []);
+        if (error) {
+          console.error("Erreur de chargement des commentaires:", error);
+        } else {
+          setCommentaires(data || []);
+        }
+      } catch (err) {
+        console.error("Problème de connexion avec Supabase :", err);
       }
     };
 
@@ -57,19 +60,21 @@ export default function Card({
       return;
     }
 
-    const { supabase } = await import("./../lib/supabaseClient");
+    try {
+      const { data, error } = await supabase
+        .from("commentaires")
+        .insert([{ project_id: projectId, username: pseudo, text: nouveauCommentaire }])
+        .select();
 
-    const { data, error } = await supabase
-      .from("commentaires")
-      .insert([{ project_id: projectId, username: pseudo, text: nouveauCommentaire }])
-      .select();
-
-    if (error) {
-      console.error("Erreur lors de l'ajout du commentaire:", error);
-      alert("Erreur lors de l'envoi du commentaire.");
-    } else {
-      setCommentaires((prevCommentaires) => [data[0], ...prevCommentaires]);
-      setNouveauCommentaire("");
+      if (error) {
+        console.error("Erreur lors de l'ajout du commentaire:", error);
+        alert("Erreur lors de l'envoi du commentaire.");
+      } else {
+        setCommentaires((prevCommentaires) => [data[0], ...prevCommentaires]);
+        setNouveauCommentaire("");
+      }
+    } catch (err) {
+      console.error("Problème avec Supabase :", err);
     }
   };
 
