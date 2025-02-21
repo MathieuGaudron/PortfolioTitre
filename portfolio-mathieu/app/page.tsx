@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Stack from "./components/Stack";
 // import Card from "./components/Card";
 import Cards from "./components/Cards";
+import ContactForm from "./components/ContactForm";
 
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
           <section id="projets">
             <Cards />
             {/* <Card /> */}
+          </section>
+          <section id="contact">
+            <ContactForm />
           </section>
         </div>
       </main>

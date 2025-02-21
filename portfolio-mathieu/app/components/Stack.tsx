@@ -36,7 +36,7 @@ export default function Stacks() {
         {techs.map((tech, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer"
+            className="flex flex-col items-center p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
           >
             <span className={`text-4xl sm:text-5xl ${tech.color}`}>{tech.icon}</span>
             <p className="mt-2 text-gray-300 text-base">{tech.name}</p>

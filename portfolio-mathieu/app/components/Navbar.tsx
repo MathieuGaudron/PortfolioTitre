@@ -28,7 +28,7 @@ export default function Navbar() {
             <button
               key={index}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className="text-gray-300 hover:text-purple-500 transition-transform duration-500 hover:scale-105 text-lg font-bold"
+              className="text-gray-300 hover:text-purple-500 transition-transform duration-500 hover:scale-110 text-lg font-bold"
             >
               {item}
             </button>
