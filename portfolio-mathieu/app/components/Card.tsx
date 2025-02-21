@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaReact } from "react-icons/fa";
-import { supabase } from "../lib/supabaseClient";
 
 interface CardProps {
   title: string;
@@ -34,6 +33,8 @@ export default function Card({
 
   useEffect(() => {
     const fetchCommentaires = async () => {
+      const { supabase } = await import("@/app/lib/supabaseClient");
+
       const { data, error } = await supabase
         .from("commentaires")
         .select("*")
@@ -56,11 +57,11 @@ export default function Card({
       return;
     }
 
+    const { supabase } = await import("@/app/lib/supabaseClient");
+
     const { data, error } = await supabase
       .from("commentaires")
-      .insert([
-        { project_id: projectId, username: pseudo, text: nouveauCommentaire },
-      ])
+      .insert([{ project_id: projectId, username: pseudo, text: nouveauCommentaire }])
       .select();
 
     if (error) {
@@ -74,7 +75,7 @@ export default function Card({
 
   return (
     <div className="rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 mb-8 hover:shadow-purple-600">
-      <Link href={demo || "#" } target="_blank" rel="noopener noreferrer">
+      <Link href={demo || "#"} target="_blank" rel="noopener noreferrer">
         <div className="relative w-full h-64 cursor-pointer">
           <Image
             src={image}
@@ -121,20 +122,12 @@ export default function Card({
           <div className="space-y-3 mt-3 max-h-40 overflow-y-auto p-4 rounded-lg">
             {commentaires.length > 0 ? (
               commentaires.map((commentaire) => (
-                <div
-                  key={commentaire.id}
-                  className="p-2 rounded-lg text-gray-300"
-                >
-                  <strong className="text-purple-400">
-                    {commentaire.username} :
-                  </strong>{" "}
-                  {commentaire.text}
+                <div key={commentaire.id} className="p-2 rounded-lg text-gray-300">
+                  <strong className="text-purple-400">{commentaire.username} :</strong> {commentaire.text}
                 </div>
               ))
             ) : (
-              <p className="text-gray-400">
-                Soyez le premier à commenter ce projet !
-              </p>
+              <p className="text-gray-400">Soyez le premier à commenter ce projet !</p>
             )}
           </div>
 
