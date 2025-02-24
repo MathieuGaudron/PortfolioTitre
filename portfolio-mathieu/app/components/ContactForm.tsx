@@ -12,7 +12,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nom || !email || !message) {
+    if (!nom.trim() || !email.trim() || !message.trim()) {
       setErreur("Tous les champs sont obligatoires !");
       return;
     }
@@ -24,7 +24,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nom, email, message }),
+        body: JSON.stringify({ nom: nom.trim(), email: email.trim(), message: message.trim() }),
       });
 
       const data = await res.json();
@@ -35,7 +35,7 @@ export default function ContactForm() {
       setEmail("");
       setMessage("");
     } catch (error) {
-      console.error("Erreur lors de l'envoi du message :", error);
+      console.error("Erreur lors de l'envoi :", error);
       setErreur("Échec de l'envoi, réessayez.");
     } finally {
       setIsLoading(false);
@@ -47,12 +47,12 @@ export default function ContactForm() {
       <h2 className="text-3xl font-bold text-purple-400 mb-4">Contactez-moi</h2>
 
       {envoye && (
-        <p className="text-green-500 font-semibold transition-opacity duration-300 opacity-100">
-          Message envoyé avec succès ! ✅
+        <p className="text-green-500 font-semibold transition-opacity duration-300">
+          Message envoyé avec succès !
         </p>
       )}
       {erreur && (
-        <p className="text-red-500 font-semibold transition-opacity duration-300 opacity-100">
+        <p className="text-red-500 font-semibold transition-opacity duration-300">
           {erreur}
         </p>
       )}
@@ -88,7 +88,7 @@ export default function ContactForm() {
             isLoading ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
-          {isLoading ? "Envoi..." : "Envoyer"}
+          {isLoading ? "Envoi en cours..." : "Envoyer"}
         </button>
       </form>
     </div>
