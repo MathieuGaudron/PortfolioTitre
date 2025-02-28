@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaFilePdf } from "react-icons/fa";
 
 export default function Hero() {
   const phrases = [
@@ -37,9 +38,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-white px-6 md:px-12 font-geist mt-24 md:mt-0">
-      <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-purple-900 shadow-lg shadow-violet-700/50 transition-transform duration-300 hover:scale-110">
-
+    <section className="flex flex-col lg:flex-row md:flex-col items-center justify-center min-h-screen text-white px-6 md:px-12 font-geist mt-24 sm:mt-16 md:mt-40 xl:mt-10">
+      <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 md:mb-16 rounded-full overflow-hidden border-4 border-purple-900 shadow-lg shadow-violet-700/50 transition-transform duration-300 hover:scale-110">
         <Image
           src="/assets/photo_cv_epitech.jpg"
           alt="Mathieu Gaudron"
@@ -52,8 +52,7 @@ export default function Hero() {
       <div className="mt-6 md:mt-0 md:ml-12 text-center md:text-left max-w-lg md:max-w-xl">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-geist leading-tight">
           Bonjour, bienvenue sur mon{" "}
-          <span className="text-purple-400">Portfolio </span>
-          !
+          <span className="text-purple-400">Portfolio </span>!
         </h1>
 
         <div className="mt-8 text-base sm:text-lg text-gray-300">
@@ -84,7 +83,6 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-4xl sm:text-5xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
-
             >
               <SiGithub />
             </Link>
@@ -94,9 +92,18 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-4xl sm:text-5xl text-purple-500 hover:text-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
-
             >
               <SiLinkedin />
+            </Link>
+
+            <Link
+              href="/assets/CV_Mathieu_Gaudron.pdf"
+              download="CV_Mathieu_Gaudron.pdf"
+              target="_blank"
+              className="flex items-center space-x-2 bg-purple-500 text-black px-3 rounded-lg hover:bg-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
+            >
+              <FaFilePdf className="text-xl" />
+              <span>CV</span>
             </Link>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaReact } from "react-icons/fa";
-import { supabase } from "@/app/lib/supabaseClient"; 
+import { supabase } from "@/app/lib/supabaseClient";
 
 interface CardProps {
   title: string;
@@ -63,7 +63,9 @@ export default function Card({
     try {
       const { data, error } = await supabase
         .from("commentaires")
-        .insert([{ project_id: projectId, username: pseudo, text: nouveauCommentaire }])
+        .insert([
+          { project_id: projectId, username: pseudo, text: nouveauCommentaire },
+        ])
         .select();
 
       if (error) {
@@ -127,12 +129,20 @@ export default function Card({
           <div className="space-y-3 mt-3 max-h-40 overflow-y-auto p-4 rounded-lg">
             {commentaires.length > 0 ? (
               commentaires.map((commentaire) => (
-                <div key={commentaire.id} className="p-2 rounded-lg text-gray-300">
-                  <strong className="text-purple-400">{commentaire.username} :</strong> {commentaire.text}
+                <div
+                  key={commentaire.id}
+                  className="p-2 rounded-lg text-gray-300"
+                >
+                  <strong className="text-purple-400">
+                    {commentaire.username} :
+                  </strong>{" "}
+                  {commentaire.text}
                 </div>
               ))
             ) : (
-              <p className="text-gray-400">Soyez le premier à commenter ce projet !</p>
+              <p className="text-gray-400">
+                Soyez le premier à commenter ce projet !
+              </p>
             )}
           </div>
 
