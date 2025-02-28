@@ -35,6 +35,7 @@ export default function ContactForm() {
           setFormData({ nom: "", email: "", message: "" });
         })
         .catch((error) => {
+          console.error("", error);
           setStatus({ loading: true, error: "Votre message a été envoyé. Je vous répondrai au plus vite !" });
           setFormData({ nom: "", email: "", message: "" });
         });
