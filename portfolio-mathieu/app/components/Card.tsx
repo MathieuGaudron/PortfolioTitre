@@ -124,7 +124,7 @@ export default function Card({
 
         <hr className="mt-10 border-t-2 border-purple-500" />
 
-        <div className="mt-6">
+        <div className="mt-6 lg:mt-12">
           <h4 className="text-lg font-semibold text-gray-200">Commentaires</h4>
           <div className="space-y-3 mt-3 max-h-40 overflow-y-auto p-4 rounded-lg">
             {commentaires.length > 0 ? (
@@ -141,7 +141,7 @@ export default function Card({
               ))
             ) : (
               <p className="text-gray-400">
-                Soyez le premier à commenter ce projet !
+                Soyez le premier à donner votre avis !
               </p>
             )}
           </div>

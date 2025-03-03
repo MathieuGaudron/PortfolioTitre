@@ -21,7 +21,7 @@ export default function Cards() {
 
         <Card
           title="Auto-école HD Conduite"
-          description="Un site web vitrine pour les auto-écoles d'un client. Réalisé avec React et Tailwind CSS."
+          description="Un site web pour un client possédant 2 auto-ecoles regroupant les informations de chacune d'elles, ainsi que les différents forfaits (Auto / Moto). Réalisé avec React et Tailwind CSS."
           image="/assets/hd-conduite.png"
           link="https://github.com/MathieuGaudron/HD_CONDUITE"
           demo="https://hd-conduite.vercel.app/"
@@ -42,13 +42,13 @@ export default function Cards() {
         />
 
         <Card
-          title="Puissance 4"
-          description="Projet d'algorithmie en JavaScript. Le célèbre jeu puissance 4."
-          image="/assets/puissance4.png"
-          link="https://github.com/MathieuGaudron/Puissance_4"
-          demo="https://puissance-4-green.vercel.app/"
-          githubButton={true}
-          reactButton={true}
+          title="Outil de gestion de Stock"
+          description="Création d'un outil de gestion de stock pour une entreprise d'evenementiel et de vente d'alcool. Réalisé avec NextJs. Ce projet est actuellement en cours de développement..."
+          image="/assets/loading1.gif" 
+          link="#"
+          // demo="https://puissance-4-green.vercel.app/"
+          githubButton={false}
+          reactButton={false}
           projectId="puissance-4"
         />
       </div>
