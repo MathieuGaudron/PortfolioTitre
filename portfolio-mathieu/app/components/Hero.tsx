@@ -97,8 +97,8 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/portfolio-mathieu/public/CV_DEV_MATHIEU_GAUDRON_2025.pdf"
-              download="/portfolio-mathieu/public/CV_DEV_MATHIEU_GAUDRON_2025.pdf"
+              href="/CV_DEV_MATHIEU_GAUDRON_2025.pdf"
+              download="CV_DEV_MATHIEU_GAUDRON_2025.pdf"
               target="_blank"
               className="flex items-center space-x-2 bg-purple-500 text-black px-3 rounded-lg hover:bg-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
             >
