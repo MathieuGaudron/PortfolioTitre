@@ -46,7 +46,7 @@ export default function Cards() {
           description="Création d'un outil de gestion de stock pour une entreprise d'evenementiel et de vente d'alcool. Réalisé avec NextJs. Ce projet est actuellement en cours de développement..."
           image="/assets/loading1.gif" 
           link="#"
-          // demo="https://puissance-4-green.vercel.app/"
+          // demo=
           githubButton={false}
           reactButton={false}
           projectId="puissance-4"

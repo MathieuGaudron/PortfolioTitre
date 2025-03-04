@@ -97,13 +97,13 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/assets/CV_Mathieu_Gaudron.pdf"
-              download="CV_Mathieu_Gaudron.pdf"
+              href="/portfolio-mathieu/public/CV_DEV_MATHIEU_GAUDRON_2025.pdf"
+              download="CV_DEV_MATHIEU_GAUDRON_2025.pdf"
               target="_blank"
               className="flex items-center space-x-2 bg-purple-500 text-black px-3 rounded-lg hover:bg-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
             >
               <FaFilePdf className="text-xl" />
-              <span>CV</span>
+              <span className="font-bold">CV</span>
             </Link>
           </div>
         </div>
