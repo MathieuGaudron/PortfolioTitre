@@ -34,16 +34,20 @@ export default function Card({
 
   useEffect(() => {
     const fetchCommentaires = async () => {
-      const { data, error } = await supabase
-        .from("commentaires")
-        .select("*")
-        .eq("project_id", projectId)
-        .order("created_at", { ascending: false });
+      try {
+        const { data, error } = await supabase
+          .from("commentaires")
+          .select("*")
+          .eq("project_id", projectId)
+          .order("created_at", { ascending: false });
 
-      if (error) {
-        console.error("Erreur de chargement des commentaires:", error);
-      } else {
-        setCommentaires(data || []);
+        if (error) {
+          console.error("Erreur de chargement des commentaires:", error);
+        } else {
+          setCommentaires(data || []);
+        }
+      } catch (err) {
+        console.error("Problème de connexion avec Supabase :", err);
       }
     };
 
@@ -56,25 +60,29 @@ export default function Card({
       return;
     }
 
-    const { data, error } = await supabase
-      .from("commentaires")
-      .insert([
-        { project_id: projectId, username: pseudo, text: nouveauCommentaire },
-      ])
-      .select();
+    try {
+      const { data, error } = await supabase
+        .from("commentaires")
+        .insert([
+          { project_id: projectId, username: pseudo, text: nouveauCommentaire },
+        ])
+        .select();
 
-    if (error) {
-      console.error("Erreur lors de l'ajout du commentaire:", error);
-      alert("Erreur lors de l'envoi du commentaire.");
-    } else {
-      setCommentaires((prevCommentaires) => [data[0], ...prevCommentaires]);
-      setNouveauCommentaire("");
+      if (error) {
+        console.error("Erreur lors de l'ajout du commentaire:", error);
+        alert("Erreur lors de l'envoi du commentaire.");
+      } else {
+        setCommentaires((prevCommentaires) => [data[0], ...prevCommentaires]);
+        setNouveauCommentaire("");
+      }
+    } catch (err) {
+      console.error("Problème avec Supabase :", err);
     }
   };
 
   return (
     <div className="rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 mb-8 hover:shadow-purple-600">
-      <Link href={demo || "#" } target="_blank" rel="noopener noreferrer">
+      <Link href={demo || "#"} target="_blank" rel="noopener noreferrer">
         <div className="relative w-full h-64 cursor-pointer">
           <Image
             src={image}
@@ -116,7 +124,7 @@ export default function Card({
 
         <hr className="mt-10 border-t-2 border-purple-500" />
 
-        <div className="mt-6">
+        <div className="mt-6 lg:mt-12">
           <h4 className="text-lg font-semibold text-gray-200">Commentaires</h4>
           <div className="space-y-3 mt-3 max-h-40 overflow-y-auto p-4 rounded-lg">
             {commentaires.length > 0 ? (
@@ -133,7 +141,7 @@ export default function Card({
               ))
             ) : (
               <p className="text-gray-400">
-                Soyez le premier à commenter ce projet !
+                Soyez le premier à donner votre avis !
               </p>
             )}
           </div>
