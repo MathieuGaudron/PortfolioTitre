@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/app/lib/supabaseClient";
 
+
+
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const projectId = searchParams.get("projectId");
@@ -21,6 +24,10 @@ export async function GET(req: Request) {
 
   return NextResponse.json(data, { status: 200 });
 }
+
+
+
+
 
 export async function POST(req: Request) {
   const { projectId, username, text } = await req.json();
