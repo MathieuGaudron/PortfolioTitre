@@ -1,0 +1,62 @@
+Lien du portfolio : https://mathieu-gaudron-devfolio.vercel.app/
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Portfolio de Mathieu GAUDRON
+
+Ce projet est mon portfolio personnel, développé en Next.js avec Tailwind CSS. Il permet de présenter mes compétences, mes projets et de faciliter le contact avec des recruteurs ou des clients potentiels.
+
+
+Il est composé d'une seul page c'est donc un portfolio "One Page". Il est composé de la manière suivante : 
+
+
+    *SECTION - A PROPOS :
+
+    - Présentation rapide avec une photo et une phrase d’accroche.
+    - Informations sur mon parcours, mes compétences, les technologies et outils utilisés (LinkedIn, GitHub, CV téléchargeable).
+
+
+
+    *SECTION - STACK : 
+
+    - Un apperçu des stacks que je maitrise ou sue lesquelles j'ai pu travailler.
+  
+
+
+    *SECTION - PROJETS : 
+
+    - 4 projets (succeptible d'être changé au fur et à mesure du temps) composé tous de la même sorte :
+
+        -  Le titre du projet
+        -  L'objectif du projet
+        -  Les stacks utilisé pour réalisé le projet
+        -  Un lien vers le github du projet (excepté les projets sensible)
+        -  Un lien vers la version hébergée si disponible sinon un système de modal incluant des screenshots.
+        -  Un système de commentaires permettant aux visiteurs de laisser leur avis sur chaque projets.
+  
+    - Le systeme de commentaire a été développé avec Next.JS API ROUTES pour gerer les requêtes backend et Supabase pour la base de données. Il fonctionne de la manière suivante :
+        
+        - L'ajout d'un commentaire -> Une requête "POST" est envoyé à l'API Next.js qui stock les données sur Supabase.
+        - L'affichage d'un commentaire -> Une requête "GET" est envoyé à l'API Next.js qui récupère les commentaires associés un à projet et les affiche dynamiquement.
+
+
+
+    *SECTION - CONTACT :
+
+    - Un formulaire de contact permettant aux visiteurs de me contacter directement depuis le site. Les messages sont envoyés à mon adresse mail.
+
+
+
+Les technologies utilisées sont :
+
+    - Next.js : Framework React pour le rendu côté serveur.
+    - Tailwind CSS : Framework CSS pour le design.
+    - Supabase : Base de données pour stocker les commentaires.
+    - Vercel : Plateforme de déploiement pour héberger le site.
+
+
+Enfin, le site est responsive et s'adapte à tous les écrans. Il est également optimisé pour le SEO et le partage sur les réseaux sociaux.
+
+Lien du portfolio : https://mathieu-gaudron-devfolio.vercel.app/
