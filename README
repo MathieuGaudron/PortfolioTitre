@@ -1,3 +1,78 @@
-Bonjour bienvenue sur mon portfolio ! Vous trouverez a la racine les maquettes ainsi que le dossier contenant le portfolio. 
+Bonjour bienvenue sur mon portfolio !
+Vous êtes actuellement sur le README du projet ce fichier est destiné a comprendre l'architecture du projet ainsi que ses fonctionnalitées et son déploiement.
+Vous trouverez à la racine les maquettes, le cahier des charges, le Readme_Utilisateur ainsi que le dossier contenant le portfolio. 
 
 Lien du portfolio : https://mathieu-gaudron-devfolio.vercel.app/
+
+
+
+---------        -----------       -------------         ------------         ------------ 
+
+Voici la documentaion techinque du projet :
+
+
+Les technologies utilisées sont :
+
+    - Next.js : Framework React pour le rendu côté serveur.
+    - Tailwind CSS : Framework CSS pour le design.
+    - Supabase : Base de données pour stocker les commentaires.
+    - Vercel : Plateforme de déploiement pour héberger le site.
+
+
+
+Architecture du projet :
+
+    /portfolio
+    │── /public         # Images et ressources statiques
+    │── /app            # Structure principale de l'application (Next.js App Router)
+    │── /components     # Composants réutilisables du site
+    │── /lib            # Configuration Supabase et utilitaires
+    │── /api            # Routes API pour la gestion des commentaires
+    │── /styles         # Styles globaux et Tailwind CSS
+    │── package.json    # Dépendances et scripts de l’application
+    │── next.config.js  # Configuration Next.js
+
+
+
+
+
+La structure de la base de données pour les commentaires :
+
+
+Colonne                   Type                         Description
+------                    -----                       -------------
+ID                       UUID                         ID Unique
+Project id               String                       ID du projet
+Username                 String                       Nom de l'utilisateur
+text                     text                         Contenu du commentaire
+created_at               timestamp                    Date et heure de l'ajout du commentaire
+
+
+
+
+
+
+Installation et dépoloiement :
+
+
+    -Installation du projet ->
+        git clone URL_DU_PORTFOLIO
+        cd portfolio
+
+    -Installation des dépendances ->
+        npm install
+        npm install @supabase/supabase-js next dotenv tailwindcss postcss autoprefixer
+
+    -Creation des variables d'environement ->
+        NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+        NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+        NEXT_PUBLIC_EMAIL_API_KEY=your_email_api_key
+
+    -Lancer le projet ->
+        npm run dev
+
+
+Le projet est automatiquement déployé via Vercel
+
+
+
