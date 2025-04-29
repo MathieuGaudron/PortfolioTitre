@@ -13,10 +13,7 @@ export default function Home() {
         <meta
           name="google-site-verification"
           content="_XOV1wQskjFLFy_gqsuPGhhjQAP-igooA1ZJqzlQB48"
-        />
-          <title>Portfolio de Mathieu</title>
-          <link rel="icon" href="../public/icone_prtfl.png" type="image/png" />
-          
+        />  
       </Head>
       <Navbar />
 
