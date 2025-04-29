@@ -77,6 +77,7 @@ export default function Card({
       } else {
         setCommentaires((prevCommentaires) => [data[0], ...prevCommentaires]);
         setNouveauCommentaire("");
+        setPseudo("");
       }
     } catch (err) {
       console.error("Problème avec Supabase :", err);
