@@ -20,14 +20,22 @@ export default function Cards() {
         />
 
         <Card
-          title="Auto-école HD Conduite"
-          description="Un site web pour un client possédant 2 auto-ecoles regroupant les informations de chacune d'elles, ainsi que les différents forfaits (Auto / Moto). Réalisé avec React et Tailwind CSS."
-          image="/assets/hd-conduite.png"
-          link="https://github.com/MathieuGaudron/HD_CONDUITE"
-          demo="https://hd-conduite.vercel.app/"
+          title="Intranet Auto-école"
+          description="Création d'un intranet en PYTHON / DJANGO pour une auto-école, avec gestion des rôles : administrateur, secrétaire, instructeur et élève. Chaque rôle dispose de fonctionnalités spécifiques adaptées à ses besoins."
+          images={[
+            "/assets/driving-school/intranet-1.png",
+            "/assets/driving-school/intranet-2.png",
+            "/assets/driving-school/intranet-3.png",
+            "/assets/driving-school/intranet-4.png",
+            "/assets/driving-school/intranet-5.png",
+            "/assets/driving-school/intranet-6.png",
+            "/assets/driving-school/intranet-7.png",
+            "/assets/driving-school/intranet-8.png",
+          ]}
+          link="https://github.com/MathieuGaudron/Intranet_Auto_Ecole"
           githubButton={true}
-          reactButton={true}
-          projectId="hd-conduite"
+          reactButton={false}
+          projectId="auto-ecole-intranet"
         />
 
         <Card
@@ -44,7 +52,7 @@ export default function Cards() {
         <Card
           title="Outil de gestion de Stock"
           description="Création d'un outil de gestion de stock pour une entreprise d'evenementiel et de vente d'alcool. Réalisé avec NextJs. Ce projet est actuellement en cours de développement..."
-          image="/assets/loading1.gif" 
+          image="/assets/loading1.gif"
           link="#"
           // demo=
           githubButton={false}

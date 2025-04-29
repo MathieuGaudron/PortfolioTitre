@@ -9,7 +9,7 @@ import {
   SiMongodb,
   SiLaravel,
   SiNodedotjs,
-  SiWordpress,
+  SiDjango,
 } from "react-icons/si";
 
 const techs = [
@@ -22,7 +22,7 @@ const techs = [
   { name: "PHP", icon: <SiPhp />, color: "text-blue-500" },
   { name: "Symfony", icon: <SiSymfony />, color: "text-gray-100" },
   { name: "Laravel", icon: <SiLaravel />, color: "text-red-500" },
-  { name: "WordPress", icon: <SiWordpress />, color: "text-blue-600" },
+  { name: "Django", icon: <SiDjango />, color: "text-blue-600" },
 ];
 
 export default function Stacks() {

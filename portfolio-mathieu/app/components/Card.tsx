@@ -8,7 +8,8 @@ import { supabase } from "@/app/lib/supabaseClient";
 interface CardProps {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  images?: string[];
   link: string;
   demo?: string;
   githubButton?: boolean;
@@ -20,6 +21,7 @@ export default function Card({
   title,
   description,
   image,
+  images,
   link,
   demo,
   githubButton,
@@ -31,6 +33,7 @@ export default function Card({
   >([]);
   const [pseudo, setPseudo] = useState("");
   const [nouveauCommentaire, setNouveauCommentaire] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchCommentaires = async () => {
@@ -80,19 +83,93 @@ export default function Card({
     }
   };
 
+  const nextImage = () => {
+    if (images) {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (images) {
+      setCurrentImageIndex(
+        (prev) => (prev - 1 + images.length) % images.length
+      );
+    }
+  };
+
   return (
     <div className="rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 mb-8 hover:shadow-purple-600">
-      <Link href={demo || "#"} target="_blank" rel="noopener noreferrer">
-        <div className="relative w-full h-64 cursor-pointer">
+      {images && images.length > 0 ? (
+        <div className="relative w-full h-64">
           <Image
-            src={image}
-            alt={title}
+            src={images[currentImageIndex]}
+            alt={`${title} image ${currentImageIndex + 1}`}
             width={600}
             height={400}
             className="rounded-t-lg w-full h-64 object-contain"
           />
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
-      </Link>
+      ) : image ? (
+        <Link href={demo || "#"} target="_blank" rel="noopener noreferrer">
+          <div className="relative w-full h-64 cursor-pointer">
+            <Image
+              src={image}
+              alt={title}
+              width={600}
+              height={400}
+              className="rounded-t-lg w-full h-64 object-contain"
+            />
+          </div>
+        </Link>
+      ) : null}
 
       <div className="p-6">
         <h3 className="text-2xl font-bold text-purple-400">{title}</h3>
@@ -162,7 +239,7 @@ export default function Card({
             />
             <button
               onClick={ajouterCommentaire}
-              className="w-full p-2 mt-3 text-white rounded-lg hover:bg-white hover:text-black"
+              className="w-full p-2 mt-3 text-white rounded-lg hover:bg-white hover:text-black transition"
             >
               Ajouter un commentaire
             </button>
