@@ -21,7 +21,7 @@ export default function Cards() {
 
         <Card
           title="Intranet Auto-école"
-          description="Projet de création d'un intranet pour une auto-école, avec gestion des rôles : administrateur, secrétaire, instructeur et élève. Chaque rôle dispose de fonctionnalités spécifiques adaptées à ses besoins."
+          description="Création d'un intranet pour une auto-école, avec gestion des rôles : administrateur, secrétaire, instructeur et élève. Chaque rôle dispose de fonctionnalités spécifiques adaptées à ses besoins. Stack utilisé : Django."
           images={[
             "/assets/driving-school/intranet-1.png",
             "/assets/driving-school/intranet-2.png",
@@ -32,7 +32,7 @@ export default function Cards() {
             "/assets/driving-school/intranet-7.png",
             "/assets/driving-school/intranet-8.png",
           ]}
-          link="https://github.com/MathieuGaudron/auto-ecole-intranet"
+          link="https://github.com/MathieuGaudron/Intranet_Auto_Ecole"
           githubButton={true}
           reactButton={false}
           projectId="auto-ecole-intranet"
