@@ -10,6 +10,9 @@ import {
   SiLaravel,
   SiNodedotjs,
   SiDjango,
+  SiSpringboot,
+  SiRubyonrails,
+  SiDocker,
 } from "react-icons/si";
 
 const techs = [
@@ -23,13 +26,16 @@ const techs = [
   { name: "Symfony", icon: <SiSymfony />, color: "text-gray-100" },
   { name: "Laravel", icon: <SiLaravel />, color: "text-red-500" },
   { name: "Django", icon: <SiDjango />, color: "text-blue-600" },
+  { name: "Spring Boot", icon: <SiSpringboot />, color: "text-green-600" },
+  { name: "Ruby on Rails", icon: <SiRubyonrails />, color: "text-red-600" },
+  { name: "Docker", icon: <SiDocker />, color: "text-blue-400" },
 ];
 
 export default function Stacks() {
   return (
     <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-24 text-center mt-24 md:mt-32">
       <h2 className="text-3xl font-bold mb-14 text-purple-400">
-        Les stacks sur lesquelles j&apos;ai pu travailler :
+        Les technos que j&apos;ai pu utiliser :
       </h2>
 
       <div className="grid grid-cols-2   md:grid-cols-5 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
