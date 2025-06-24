@@ -13,6 +13,9 @@ export default function Cards() {
     setModalImages(images);
     setCurrentIndex(index);
     setModalOpen(true);
+    setTimeout(() => {
+      window.scrollTo({ top: 1800, behavior: "smooth" });
+    }, 50);
   };
 
   const closeModal = () => setModalOpen(false);
