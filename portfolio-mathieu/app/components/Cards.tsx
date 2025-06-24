@@ -19,7 +19,9 @@ export default function Cards() {
   const nextImage = () =>
     setCurrentIndex((prev) => (prev + 1) % modalImages.length);
   const prevImage = () =>
-    setCurrentIndex((prev) => (prev - 1 + modalImages.length) % modalImages.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + modalImages.length) % modalImages.length
+    );
 
   return (
     <section className="py-16 text-center mt-24 md:mt-32 mx-auto max-w-screen-xl">
@@ -28,6 +30,7 @@ export default function Cards() {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 px-4 sm:px-8 mx-4 md:mx-0">
+
         <Card
           title="Bibliothèque de Films"
           description="Une application React / Node / MongoDB qui permet de rechercher vos films et séries TV du moment. Inclus un système d'inscription et connexion avec un JWT."
@@ -39,9 +42,47 @@ export default function Cards() {
           projectId="movies-library"
         />
 
+
+        <Card
+          title="Chez PONCH'"
+          description="Création d’un site (Java / Spring Boot / MySQL) pour un restaurant, avec une interface d’administration permettant la gestion complète des plats et menus (CRUD). Une page de configuration dédiée permet au client de crée le site si il n'est pas encore crée et de personnaliser facilement les couleurs, images, titres et textes des boutons du site."
+          images={[
+            "/assets/java-restaurant/home.png",
+            "/assets/java-restaurant/home1.png",
+            "/assets/java-restaurant/admin_home.png",
+            "/assets/java-restaurant/config.png",
+            "/assets/java-restaurant/plats_admin.png",
+            "/assets/java-restaurant/menu_admin.png",
+            "/assets/java-restaurant/carte_client.png",
+            "/assets/java-restaurant/menu_client.png",
+          ]}
+          link="https://github.com/MathieuGaudron/JAVA_RESTAURANT"
+          githubButton={true}
+          reactButton={false}
+          projectId="Chez-PONCH'"
+          onImageClick={(index) =>
+            openModal(
+              [
+                "/assets/java-restaurant/home.png",
+                "/assets/java-restaurant/home1.png",
+                "/assets/java-restaurant/admin_home.png",
+                "/assets/java-restaurant/config.png",
+                "/assets/java-restaurant/plats_admin.png",
+                "/assets/java-restaurant/menu_admin.png",
+                "/assets/java-restaurant/carte_client.png",
+                "/assets/java-restaurant/menu_client.png",
+              ],
+              index
+            )
+          }
+        />
+        
+
+
+
         <Card
           title="Intranet Auto-école"
-          description="Création d'un intranet pour une auto-école, avec gestion des rôles : administrateur, secrétaire, instructeur et élève. Chaque rôle dispose de fonctionnalités spécifiques adaptées à ses besoins. Stack utilisé : Django."
+          description="Création d'un intranet pour une auto-école (PYTHON / DJANGO), avec gestion des rôles : administrateur, secrétaire, instructeur et élève. Chaque rôle dispose de fonctionnalités spécifiques adaptées à ses besoins."
           images={[
             "/assets/driving-school/intranet-1.png",
             "/assets/driving-school/intranet-2.png",
@@ -69,7 +110,6 @@ export default function Cards() {
                 "/assets/driving-school/intranet-8.png",
               ],
               index
-              
             )
           }
         />
@@ -82,16 +122,6 @@ export default function Cards() {
           demo="https://puissance-4-green.vercel.app/"
           githubButton={true}
           reactButton={true}
-          projectId="puissance-4"
-        />
-
-        <Card
-          title="Outil de gestion de Stock"
-          description="Création d'un outil de gestion de stock pour une entreprise d'evenementiel et de vente d'alcool. Réalisé avec NextJs. Ce projet est actuellement en cours de développement..."
-          image="/assets/loading1.gif"
-          link="#"
-          githubButton={false}
-          reactButton={false}
           projectId="puissance-4"
         />
       </div>

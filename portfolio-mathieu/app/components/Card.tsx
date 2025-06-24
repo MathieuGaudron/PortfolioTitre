@@ -103,7 +103,7 @@ export default function Card({
   return (
     <div className="rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 mb-8 hover:shadow-purple-600">
       {images && images.length > 0 ? (
-        <div className="relative w-full h-64">
+        <div className="relative w-full h-64 cursor-pointer">
           <Image
             src={images[currentImageIndex]}
             alt={`${title} image ${currentImageIndex + 1}`}
