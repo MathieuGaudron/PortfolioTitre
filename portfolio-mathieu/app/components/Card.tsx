@@ -15,6 +15,7 @@ interface CardProps {
   githubButton?: boolean;
   reactButton?: boolean;
   projectId: string;
+  onImageClick?: (index: number) => void;
 }
 
 export default function Card({
@@ -27,6 +28,7 @@ export default function Card({
   githubButton,
   reactButton,
   projectId,
+  onImageClick,
 }: CardProps) {
   const [commentaires, setCommentaires] = useState<
     { id: string; username: string; text: string }[]
@@ -108,6 +110,7 @@ export default function Card({
             width={600}
             height={400}
             className="rounded-t-lg w-full h-64 object-contain"
+            onClick={() => onImageClick?.(currentImageIndex)}
           />
           {images.length > 1 && (
             <>

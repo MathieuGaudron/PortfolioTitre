@@ -1,6 +1,26 @@
+"use client";
+
+import { useState } from "react";
 import Card from "./Card";
+import Modal from "./Modal";
 
 export default function Cards() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImages, setModalImages] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const openModal = (images: string[], index: number) => {
+    setModalImages(images);
+    setCurrentIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => setModalOpen(false);
+  const nextImage = () =>
+    setCurrentIndex((prev) => (prev + 1) % modalImages.length);
+  const prevImage = () =>
+    setCurrentIndex((prev) => (prev - 1 + modalImages.length) % modalImages.length);
+
   return (
     <section className="py-16 text-center mt-24 md:mt-32 mx-auto max-w-screen-xl">
       <h2 className="text-3xl font-bold mb-8 md:mb-12 lg:mb-24 text-purple-400">
@@ -36,6 +56,22 @@ export default function Cards() {
           githubButton={true}
           reactButton={false}
           projectId="auto-ecole-intranet"
+          onImageClick={(index) =>
+            openModal(
+              [
+                "/assets/driving-school/intranet-1.png",
+                "/assets/driving-school/intranet-2.png",
+                "/assets/driving-school/intranet-3.png",
+                "/assets/driving-school/intranet-4.png",
+                "/assets/driving-school/intranet-5.png",
+                "/assets/driving-school/intranet-6.png",
+                "/assets/driving-school/intranet-7.png",
+                "/assets/driving-school/intranet-8.png",
+              ],
+              index
+              
+            )
+          }
         />
 
         <Card
@@ -54,12 +90,21 @@ export default function Cards() {
           description="Création d'un outil de gestion de stock pour une entreprise d'evenementiel et de vente d'alcool. Réalisé avec NextJs. Ce projet est actuellement en cours de développement..."
           image="/assets/loading1.gif"
           link="#"
-          // demo=
           githubButton={false}
           reactButton={false}
           projectId="puissance-4"
         />
       </div>
+
+      {modalOpen && (
+        <Modal
+          images={modalImages}
+          index={currentIndex}
+          onClose={closeModal}
+          onNext={nextImage}
+          onPrev={prevImage}
+        />
+      )}
     </section>
   );
 }
