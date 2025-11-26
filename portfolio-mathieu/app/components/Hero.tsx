@@ -41,7 +41,7 @@ export default function Hero() {
     <section className="flex flex-col lg:flex-row md:flex-col items-center justify-center min-h-screen text-white px-6 md:px-12 font-geist mt-24 sm:mt-16 md:mt-40 xl:mt-10">
       <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 md:mb-16 rounded-full overflow-hidden border-4 border-purple-900 shadow-lg shadow-violet-700/50 transition-transform duration-300 hover:scale-110">
         <Image
-          src="/assets/photo_cv_epitech.jpg"
+          src="/assets/cv_dev.jpg"
           alt="Mathieu Gaudron"
           width={300}
           height={300}
@@ -97,7 +97,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/CV_DEV_MATHIEU_GAUDRON_2025_2026.pdf"
+              href="/CV_DEV_MATHIEU_GAUDRON_2026.pdf"
               download="CV_DEV_MATHIEU_GAUDRON_2025_2026.pdf"
               target="_blank"
               className="flex items-center space-x-2 bg-purple-500 text-black px-3 rounded-lg hover:bg-purple-600 transition-transform duration-200 hover:scale-110 mt-1"
